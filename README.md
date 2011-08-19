@@ -17,12 +17,12 @@ When you're done, please zip up this directory and send it back to us. Thanks!
     instance as an argument. The method should return whether the supplied
     instance is a child node of the receiver.
 
-4.  A bug has been detected in the code where a TreeNode that has a parent is
-    assigned to a new parent node- the node is still included in the previous
-    parent's children collection.
+4.  A bug has been detected in the code where a child TreeNode that has a
+    parent is assigned to a new parent node: the child node is still included
+    in the previous parent's children collection.
 
-    Write a test for this behavior that fails, and then change the implementation
-    of TestNode to fix the issue.
+    Write a fialing test for this behavior, and then change the implementation
+    of TestNode to make the test pass.
 
 5.  Add a method to TreeNode that returns the path to that node. The path should
     be the names of each node in the chain, seperated by '>'. For example:
