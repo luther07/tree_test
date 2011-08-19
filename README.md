@@ -21,11 +21,11 @@ When you're done, please zip up this directory and send it back to us. Thanks!
     parent is assigned to a new parent node: the child node is still included
     in the previous parent's children collection.
 
-    Write a fialing test for this behavior, and then change the implementation
+    Write a failing test for this behavior, and then change the implementation
     of TestNode to make the test pass.
 
 5.  Add a method to TreeNode that returns the path to that node. The path should
-    be the names of each node in the chain, seperated by '>'. For example:
+    be the names of each node in the chain, separated by '>'. For example:
     "Parent > Child > Grandchild".
 
     The test for this method should test at least 3 levels.
