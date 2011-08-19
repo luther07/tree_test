@@ -32,9 +32,9 @@ When you're done, please zip up this directory and send it back to us. Thanks!
     The test for this method should test at least 3 levels.
 
 6.  Add a method to TreeNode that takes a block and yields the node itself, all
-    of the node's children, and their children to the block one at a time. For 
+    of the node's children, and their children to the block one at a time. For
     example, given this tree:
-    
+
                           A
                          / \
                         B   C
@@ -42,10 +42,10 @@ When you're done, please zip up this directory and send it back to us. Thanks!
                       D   E
                          / \
                         F   G
-        
+
     Calling said method on node 'B' should yield the nodes 'B', 'D', 'E', 'F',
-    and 'G' to the block.
-    
+    and 'G' to the block. Please note that the order is important.
+
 7.  Add a new file to this directory that includes links to your GitHub
     profile, personal websites or projects, and your email address. Also
     note the version of Ruby you used to complete this exercise.
