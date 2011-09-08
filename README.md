@@ -25,15 +25,15 @@ When you're done, please zip up this directory and send it back to us. Thanks!
     Write a failing test for this behavior, and then change the implementation
     of TestNode to make the test pass.
 
-5.  Add a method to TreeNode that returns the path to that node. The path should
-    be the names of each node in the chain, separated by '>'. For example:
-    "Parent > Child > Grandchild".
+5.  Add a method to TreeNode that takes no arguments and returns the path to
+    that node. The path should be the names of each node in the chain,
+    separated by '>'. For example: "Parent > Child > Grandchild".
 
     The test for this method should test at least 3 levels.
 
-6.  Add a method to TreeNode that takes a block and yields the node itself, all
-    of the node's children, and their children to the block one at a time. For
-    example, given this tree:
+6.  Add a method to TreeNode that facilitates performing a depth-first search.
+    This method should take a block and yield the receiver and its decendants
+    to the block one at a time. For example, given this tree:
 
                           A
                          / \
@@ -43,8 +43,8 @@ When you're done, please zip up this directory and send it back to us. Thanks!
                          / \
                         F   G
 
-    Calling said method on node 'B' should yield the nodes 'B', 'D', 'E', 'F',
-    and 'G' to the block. Please note that the order is important.
+    Calling said method on node 'A' should yield the nodes 'B', 'D', 'E', 'F',
+    'G', and 'C' to the block. Please note that the order is important.
 
 7.  Add a new file to this directory that includes links to your GitHub
     profile, personal websites or projects, and your email address. Also
