@@ -1,3 +1,4 @@
+require_relative 'tree_node.rb'
 require 'test/unit'
 
 class TreeNodeTest < Test::Unit::TestCase
