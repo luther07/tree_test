@@ -5,6 +5,7 @@ class TreeNodeTest < Test::Unit::TestCase
 
   def setup
     @tree_node = TreeNode.new
+    @named_tree_node = TreeNode.new('Homer Jay Simpson')
   end
 
   def test_has_no_children_when_created
@@ -14,6 +15,19 @@ class TreeNodeTest < Test::Unit::TestCase
 
   def test_has_no_parent_when_created
     assert_nil(@tree_node.parent)
+  end
+
+  def test_has_no_name_when_created
+    assert_nil(@tree_node.name)
+  end
+
+  def test_initialize_node_with_name
+    assert_equal('Homer Jay Simpson', @named_tree_node.name)
+  end
+
+  def test_modify_node_name
+    @named_tree_node.name = 'Marjorie "Marge" Simpson'
+    assert_equal('Marjorie "Marge" Simpson', @named_tree_node.name)
   end
 
 end
