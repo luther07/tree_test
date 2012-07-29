@@ -16,4 +16,8 @@ class TreeNode
     @parent = new_parent
   end
 
+  def children_count()
+    @children.size
+  end
+
 end
