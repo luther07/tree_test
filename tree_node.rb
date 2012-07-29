@@ -10,6 +10,7 @@ class TreeNode
 
   def add_child(child)
     @children << child
+    child.parent = self
   end
 
   def parent=(new_parent)
