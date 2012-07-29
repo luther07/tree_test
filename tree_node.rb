@@ -5,6 +5,7 @@ class TreeNode
 
   def initialize(name=nil)
     @name = name
+    @children = []
   end
 
   def add_child(child)
