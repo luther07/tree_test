@@ -15,25 +15,30 @@ class TreeNodeTest < Test::Unit::TestCase
   end
 
   def test_has_no_parent_when_created
-    assert_nil(@tree_node.parent)
+    assert_nil(@tree_node.parent,
+               "node has no parent by default")
   end
 
   def test_has_no_name_when_created
-    assert_nil(@tree_node.name)
+    assert_nil(@tree_node.name,
+               "node has no name by default")
   end
 
   def test_initialize_node_with_name
-    assert_equal('Homer Jay Simpson', @named_tree_node.name)
+    assert_equal('Homer Jay Simpson', @named_tree_node.name,
+                 "should accept a name during construction")
   end
 
   def test_modify_node_name
     @named_tree_node.name = 'Marjorie "Marge" Simpson'
-    assert_equal('Marjorie "Marge" Simpson', @named_tree_node.name)
+    assert_equal('Marjorie "Marge" Simpson', @named_tree_node.name,
+                 "should allow you to modify node name")
   end
 
   def test_node_for_child
     @tree_node.add_child(@child_tree_node)
-    assert_equal(true, @tree_node.child?(@child_tree_node))
+    assert_equal(true, @tree_node.child?(@child_tree_node),
+                 "should indicate if node has specified child")
   end
 
 end
