@@ -21,4 +21,14 @@ class TreeNode
     @children.size
   end
 
+  def child?(node)
+    memberhood = false
+    @children.each do |item|
+      if item == node
+        memberhood = true
+      end
+    end
+    return memberhood
+  end
+
 end
