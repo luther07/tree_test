@@ -42,15 +42,16 @@ class TreeNodeChildAssignmentTest < Test::Unit::TestCase
     @tree_node = TreeNode.new
     @second_node = TreeNode.new
     @child_node = TreeNode.new
-    @tree_node.add_child(@child_node)
   end
 
   def test_children_count
+    @tree_node.add_child(@child_node)
     assert_equal(1, @tree_node.children_count,
                  "should have a single child when one is added")
   end
 
   def test_parent_assignment
+    @tree_node.add_child(@child_node)
     assert_equal(@tree_node, @child_node.parent)
   end
 
