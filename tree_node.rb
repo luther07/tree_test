@@ -39,4 +39,7 @@ class TreeNode
     return memberhood
   end
 
+  def node_path()
+  end
+
 end
