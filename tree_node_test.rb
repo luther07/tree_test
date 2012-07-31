@@ -6,7 +6,6 @@ class TreeNodeTest < Test::Unit::TestCase
   def setup
     @tree_node = TreeNode.new
     @named_tree_node = TreeNode.new('Homer Jay Simpson')
-    @child_tree_node = TreeNode.new
   end
 
   def test_has_no_children_when_created
@@ -35,12 +34,6 @@ class TreeNodeTest < Test::Unit::TestCase
                  "should allow you to modify node name")
   end
 
-  def test_node_for_child
-    @tree_node.add_child(@child_tree_node)
-    assert_equal(true, @tree_node.child?(@child_tree_node),
-                 "should indicate if node has specified child")
-  end
-
 end
 
 class TreeNodeChildAssignmentTest < Test::Unit::TestCase
@@ -59,6 +52,13 @@ class TreeNodeChildAssignmentTest < Test::Unit::TestCase
 
   def test_parent_assignment
     assert_equal(@tree_node, @child_node.parent)
+  end
+
+
+  def test_node_for_child
+    @tree_node.add_child(@child_node)
+    assert_equal(true, @tree_node.child?(@child_node),
+                 "should indicate if node has specified child")
   end
 
   def test_child_reassignment
