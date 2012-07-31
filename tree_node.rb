@@ -9,7 +9,6 @@ class TreeNode
   end
 
   def add_child(child)
-    child_array = Array.[](child)
     if !child.parent.nil?
       child.parent.remove_child_helper(child)
     end
