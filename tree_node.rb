@@ -13,6 +13,9 @@ class TreeNode
     child.parent = self
   end
 
+  def remove_child(child)
+  end
+
   def parent=(new_parent)
     @parent = new_parent
   end
