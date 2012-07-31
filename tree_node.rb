@@ -14,6 +14,8 @@ class TreeNode
   end
 
   def remove_child_helper(child)
+    child_array = Array.[](child)
+    @children = @children - child_array
   end
 
   def parent=(new_parent)
