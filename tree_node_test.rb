@@ -64,7 +64,7 @@ class TreeNodeChildAssignmentTest < Test::Unit::TestCase
 
   def test_helper_remove_child
     @tree_node.add_child(@child_node)
-    @tree_node.remove_child(@child_node)
+    @tree_node.remove_child_helper(@child_node)
     assert_equal(false, @tree_node.child?(@child_node),
                  "should remove the specified child node")
   end

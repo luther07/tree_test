@@ -13,7 +13,7 @@ class TreeNode
     child.parent = self
   end
 
-  def remove_child(child)
+  def remove_child_helper(child)
   end
 
   def parent=(new_parent)
