@@ -6,6 +6,8 @@ class TreeNodeTest < Test::Unit::TestCase
   def setup
     @tree_node = TreeNode.new
     @named_tree_node = TreeNode.new('Homer Jay Simpson')
+    @second_node = TreeNode.new('Bart Simpson')
+    @third_node = TreeNode.new('Bart Simpson II')
   end
 
   def test_has_no_children_when_created
@@ -32,6 +34,14 @@ class TreeNodeTest < Test::Unit::TestCase
     @named_tree_node.name = 'Marjorie "Marge" Simpson'
     assert_equal('Marjorie "Marge" Simpson', @named_tree_node.name,
                  "should allow you to modify node name")
+  end
+
+  def test_node_path
+    @named_tree_node.add_child(@second_node)
+    @second_node.add_child(@third_node)    
+    assert_equal("Homer Jay Simpson > Bart Simpson > Bart Simpson II",
+                 @third_node.node_path(),
+                 "should return string description of path to node")
   end
 
 end
