@@ -41,19 +41,13 @@ class TreeNodeTest < Test::Unit::TestCase
                  "should indicate if node has specified child")
   end
 
-  def test_child_reassignment
-    @tree_node.add_child(@child_tree_node)
-    @named_tree_node.add_child(@child_tree_node)
-    assert_equal(false, @tree_node.child?(@child_tree_node),
-                 "child reassignment should remove child from previous parents' children")
-  end  
-
 end
 
 class TreeNodeChildAssignmentTest < Test::Unit::TestCase
 
   def setup
     @tree_node = TreeNode.new
+    @second_node = TreeNode.new
     @child_node = TreeNode.new
     @tree_node.add_child(@child_node)
   end
@@ -65,6 +59,13 @@ class TreeNodeChildAssignmentTest < Test::Unit::TestCase
 
   def test_parent_assignment
     assert_equal(@tree_node, @child_node.parent)
+  end
+
+  def test_child_reassignment
+    @tree_node.add_child(@child_node)
+    @second_node.add_child(@child_node)
+    assert_equal(false, @tree_node.child?(@child_node),
+                 "child reassignment should remove child from previous parents' children")
   end
 
 end
