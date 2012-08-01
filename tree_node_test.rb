@@ -70,7 +70,7 @@ class TreeNodeTest < Test::Unit::TestCase
     @E.add_child(@F)
     @E.add_child(@G)
     assert_equal(nil, @A.depth_first_each,
-                 "should return nil if a block is passed")
+                 "should return nil if a no block is passed")
   end
 
 end
