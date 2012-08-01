@@ -40,6 +40,11 @@ class TreeNode
   end
 
   def node_path()
+    if parent == nil
+      return name.to_s
+    else
+      parent.node_path() + ' > ' + name
+    end
   end
 
 end
