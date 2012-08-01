@@ -51,7 +51,7 @@ class TreeNodeTest < Test::Unit::TestCase
                  "should return string description of path to node")
   end
 
-  def test_depth_first_each
+  def test_depth_first_each_block
     @A.add_child(@B)
     @A.add_child(@C)
     @B.add_child(@D)
@@ -59,7 +59,18 @@ class TreeNodeTest < Test::Unit::TestCase
     @E.add_child(@F)
     @E.add_child(@G)
     assert_equal(@A, @A.depth_first_each {|item| 1 + 1},
-                 "should return the receiver")
+                 "should return the receiver if a block is passed")
+  end
+
+  def test_depth_first_each_no_block
+    @A.add_child(@B)
+    @A.add_child(@C)
+    @B.add_child(@D)
+    @B.add_child(@E)
+    @E.add_child(@F)
+    @E.add_child(@G)
+    assert_equal(nil, @A.depth_first_each,
+                 "should return nil if a block is passed")
   end
 
 end
