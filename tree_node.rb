@@ -47,4 +47,7 @@ class TreeNode
     end
   end
 
+  def depth_first_each
+  end
+
 end
