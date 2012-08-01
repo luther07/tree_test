@@ -50,9 +50,20 @@ class TreeNode
   # implement non-recursive with a stack
   def depth_first_each
     if block_given?
-      yield self
-      self
+      shift_array = []
+      node = self
+      shift_array.unshift(node)
+
+      while shift_array.size > 0
+        yield shift_array.shift
+        shift_array = node.children + shift_array
+        node = shift_array[0]
+      end
+
+    return self
+
     end
+
   end
 
 end
