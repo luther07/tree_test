@@ -8,6 +8,13 @@ class TreeNodeTest < Test::Unit::TestCase
     @named_tree_node = TreeNode.new('Homer Jay Simpson')
     @second_node = TreeNode.new('Bart Simpson')
     @third_node = TreeNode.new('Bart Simpson II')
+    @A = TreeNode.new('A')
+    @B = TreeNode.new('B')
+    @C = TreeNode.new('C')
+    @D = TreeNode.new('D')
+    @E = TreeNode.new('E')
+    @F = TreeNode.new('F')
+    @G = TreeNode.new('G')
   end
 
   def test_has_no_children_when_created
@@ -42,6 +49,16 @@ class TreeNodeTest < Test::Unit::TestCase
     assert_equal("Homer Jay Simpson > Bart Simpson > Bart Simpson II",
                  @third_node.node_path(),
                  "should return string description of path to node")
+  end
+
+  def test_depth_first_each
+    @A.add_child(@B)
+    @A.add_child(@C)
+    @B.add_child(@D)
+    @B.add_child(@E)
+    @E.add_child(@F)
+    @E.add_child(@G)
+    assert_equal(nil, @A.depth_first_each { |item| puts item })
   end
 
 end
