@@ -49,6 +49,10 @@ class TreeNode
 
   # implement non-recursive with a stack
   def depth_first_each
+    if block_given?
+      yield self
+      self
+    end
   end
 
 end
