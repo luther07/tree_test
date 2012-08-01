@@ -47,6 +47,7 @@ class TreeNode
     end
   end
 
+  # implement non-recursive with a stack
   def depth_first_each
   end
 
