@@ -58,7 +58,7 @@ class TreeNodeTest < Test::Unit::TestCase
     @B.add_child(@E)
     @E.add_child(@F)
     @E.add_child(@G)
-    assert_equal(@A, @A.depth_first_each { |item| },
+    assert_equal(@A, @A.depth_first_each {|item| 1 + 1},
                  "should return the receiver")
   end
 
