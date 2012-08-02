@@ -46,7 +46,8 @@ class TreeNode
     end
   end
 
-  # implement non-recursive with a stack
+  # Our data structure is like an upside-down stack.
+  # Children are added and removed at the front.
   def depth_first_each
       shift_array = []
       node = self
