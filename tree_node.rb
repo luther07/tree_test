@@ -1,6 +1,6 @@
 class TreeNode
   attr :children
-  attr_reader :parent
+  attr_accessor :parent
   attr_accessor :name
 
   def initialize(name=nil)
@@ -19,10 +19,6 @@ class TreeNode
   def remove_child_helper(child)
     child_array = Array.[](child)
     @children = @children - child_array
-  end
-
-  def parent=(new_parent)
-    @parent = new_parent
   end
 
   def children_count()
