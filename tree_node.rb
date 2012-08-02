@@ -12,6 +12,7 @@ class TreeNode
     if !child.parent.nil?
       child.parent.remove_child_helper(child)
     end
+
     @children << child
     child.parent = self
   end
@@ -21,33 +22,36 @@ class TreeNode
     @children = @children - child_array
   end
 
-  def children_count()
+  def children_count
     @children.size
   end
 
   def child?(node)
     memberhood = false
+
     @children.each do |item|
       if item == node
         memberhood = true
       end
     end
+
     return memberhood
   end
 
-  def node_path()
+  def node_path
     if parent == nil
       return name.to_s
     else
-      parent.node_path() + ' > ' + name
+      parent.node_path + ' > ' + name
     end
   end
 
   # implement non-recursive with a stack
   def depth_first_each
-    if block_given?
       shift_array = []
       node = self
+
+    if block_given?
       shift_array.unshift(node)
 
       while shift_array.size > 0
