@@ -3,7 +3,7 @@ class TreeNode
   attr_accessor :parent
   attr_accessor :name
 
-  def initialize(name=nil)
+  def initialize(name = nil)
     @name = name
     @children = []
   end
@@ -40,9 +40,9 @@ class TreeNode
 
   def node_path
     if parent == nil
-      return name.to_s
+      name.to_s
     else
-      parent.node_path + ' > ' + name
+      "#{ parent.node_path } > #{ name }"
     end
   end
 
